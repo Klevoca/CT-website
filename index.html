@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkyWay Travel Agency</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
+
+<header class="navbar">
+
+    <div class="navbar-container">
+
+
+        <!-- LOGO -->
+
+        <a href="#home" class="logo">
+
+            <div class="logo-plane">
+                ✈
+            </div>
+
+            <div class="logo-text">
+
+                <div class="logo-name">
+                    SkyWay
+                </div>
+
+                <div class="logo-subtitle">
+                    TRAVEL AGENCY
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- NAVIGATION LINKS -->
+
+        <nav class="navigation">
+
+            <a href="#home" class="nav-link active">
+                Home
+            </a>
+
+            <a href="#destinations" class="nav-link">
+                Destinations
+            </a>
+
+            <a href="#about" class="nav-link">
+                About
+            </a>
+
+            <a href="#contact" class="nav-link">
+                Contact
+            </a>
+
+        </nav>
+
+
+
+        <!-- BOOK BUTTON -->
+
+        <a href="#booking" class="book-flight-button">
+
+            <span class="calendar-icon">▣</span>
+
+            Book a Flight
+
+        </a>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section id="home" class="hero">
+
+
+    <!-- Dark image overlay -->
+
+    <div class="hero-overlay"></div>
+
+
+
+    <!-- HERO CONTENT -->
+
+    <div class="hero-content">
+
+
+        <!-- Small heading -->
+
+        <div class="hero-eyebrow">
+
+            <span class="line"></span>
+
+            <span>
+                EXPLORE &nbsp;•&nbsp; DISCOVER &nbsp;•&nbsp; TRAVEL
+            </span>
+
+            <span class="line"></span>
+
+        </div>
+
+
+
+        <!-- MAIN TITLE -->
+
+        <h1 class="hero-title">
+
+            <span class="gold-title">
+                Golden Flight
+            </span>
+
+            <br>
+
+            <span class="white-title">
+                Over Tropical Islands
+            </span>
+
+        </h1>
+
+
+
+        <!-- DESCRIPTION -->
+
+        <p class="hero-description">
+
+            Your next adventure is just a flight away.
+
+        </p>
+
+
+
+        <!-- HERO BUTTON -->
+
+        <a href="#destinations"
+           class="explore-button">
+
+            Explore Destinations
+
+            <span class="button-arrow">
+                →
+            </span>
+
+        </a>
+
+
+    </div>
+
+
+
+    <!-- SCROLL INDICATOR -->
+
+    <a href="#booking" class="scroll-indicator">
+
+        <span>↓</span>
+
+    </a>
+
+
+</section>
+
+
+
+<!-- ==========================================
+     BOOKING SECTION
+========================================== -->
+
+<section id="booking" class="booking-section">
+
+
+    <div class="booking-container">
+
+
+        <div class="booking-heading">
+
+            <span>
+                PLAN YOUR JOURNEY
+            </span>
+
+            <h2>
+                Find Your Perfect Flight
+            </h2>
+
+            <p>
+                Tell us where you want to go and
+                we'll help you plan your journey.
+            </p>
+
+        </div>
+
+
+
+        <form id="flightForm" class="flight-form">
+
+
+            <!-- FROM -->
+
+            <div class="form-field">
+
+                <label for="from">
+                    FROM
+                </label>
+
+                <div class="field-wrapper">
+
+                    <span>✈</span>
+
+                    <input
+                        id="from"
+                        type="text"
+                        placeholder="Manila (MNL)"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TO -->
+
+            <div class="form-field">
+
+                <label for="to">
+                    TO
+                </label>
+
+                <div class="field-wrapper">
+
+                    <span>●</span>
+
+                    <input
+                        id="to"
+                        type="text"
+                        placeholder="Destination"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DEPARTURE -->
+
+            <div class="form-field">
+
+                <label for="departure">
+                    DEPARTURE
+                </label>
+
+                <div class="field-wrapper">
+
+                    <span>▣</span>
+
+                    <input
+                        id="departure"
+                        type="date"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RETURN -->
+
+            <div class="form-field">
+
+                <label for="return">
+                    RETURN
+                </label>
+
+                <div class="field-wrapper">
+
+                    <span>▣</span>
+
+                    <input
+                        id="return"
+                        type="date"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PASSENGERS -->
+
+            <div class="form-field">
+
+                <label for="passengers">
+                    PASSENGERS
+                </label>
+
+                <div class="field-wrapper">
+
+                    <span>●</span>
+
+                    <select id="passengers">
+
+                        <option>
+                            1 Passenger
+                        </option>
+
+                        <option>
+                            2 Passengers
+                        </option>
+
+                        <option>
+                            3 Passengers
+                        </option>
+
+                        <option>
+                            4 Passengers
+                        </option>
+
+                        <option>
+                            5 Passengers
+                        </option>
+
+                        <option>
+                            6+ Passengers
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SEARCH -->
+
+            <button
+                type="submit"
+                class="search-button">
+
+                Search Flights
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+
+        </form>
+
+
+
+        <!-- SEARCH MESSAGE -->
+
+        <div id="searchMessage"
+             class="search-message">
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     DESTINATIONS
+========================================== -->
+
+<section id="destinations"
+         class="destinations-section">
+
+
+    <div class="section-heading">
+
+        <span>
+            DISCOVER THE WORLD
+        </span>
+
+        <h2>
+            Popular Destinations
+        </h2>
+
+        <p>
+            Beautiful places are waiting for you.
+        </p>
+
+    </div>
+
+
+
+    <div class="destination-grid">
+
+
+        <div class="destination-card">
+
+            <div class="destination-image tokyo">
+
+                <span>
+                    🇯🇵
+                </span>
+
+            </div>
+
+            <div class="destination-info">
+
+                <h3>
+                    Tokyo
+                </h3>
+
+                <p>
+                    Japan
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="destination-card">
+
+            <div class="destination-image singapore">
+
+                <span>
+                    🇸🇬
+                </span>
+
+            </div>
+
+            <div class="destination-info">
+
+                <h3>
+                    Singapore
+                </h3>
+
+                <p>
+                    Singapore
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="destination-card">
+
+            <div class="destination-image seoul">
+
+                <span>
+                    🇰🇷
+                </span>
+
+            </div>
+
+            <div class="destination-info">
+
+                <h3>
+                    Seoul
+                </h3>
+
+                <p>
+                    South Korea
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="destination-card">
+
+            <div class="destination-image paris">
+
+                <span>
+                    🇫🇷
+                </span>
+
+            </div>
+
+            <div class="destination-info">
+
+                <h3>
+                    Paris
+                </h3>
+
+                <p>
+                    France
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     ABOUT
+========================================== -->
+
+<section id="about"
+         class="about-section">
+
+
+    <div class="section-heading">
+
+        <span>
+            WHY SKYWAY
+        </span>
+
+        <h2>
+            Travel With Confidence
+        </h2>
+
+    </div>
+
+
+
+    <div class="feature-grid">
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ✈
+            </div>
+
+            <h3>
+                Easy Booking
+            </h3>
+
+            <p>
+                Simple and convenient assistance
+                for your flight arrangements.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ★
+            </div>
+
+            <h3>
+                Excellent Service
+            </h3>
+
+            <p>
+                Friendly travel assistance from
+                booking to your journey.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🌎
+            </div>
+
+            <h3>
+                Worldwide Destinations
+            </h3>
+
+            <p>
+                Explore destinations across
+                the Philippines and the world.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     CONTACT
+========================================== -->
+
+<section id="contact"
+         class="contact-section">
+
+
+    <div class="contact-content">
+
+        <span>
+            READY FOR YOUR NEXT ADVENTURE?
+        </span>
+
+        <h2>
+            Let's plan your journey.
+        </h2>
+
+        <p>
+            Our travel team is ready to help
+            you with your next flight.
+        </p>
+
+        <a
+            href="mailto:booking@skywaytravel.com"
+            class="contact-button">
+
+            Contact Us →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+        ✈ SkyWay
+    </div>
+
+    <p>
+        Your journey. Our passion.
+    </p>
+
+    <small>
+        © 2026 SkyWay Travel Agency
+    </small>
+
+</footer>
+
+
+
+<!-- ==========================================
+     SIMPLE JAVASCRIPT
+========================================== -->
+
+<script>
+
+    const flightForm =
+        document.getElementById("flightForm");
+
+    const searchMessage =
+        document.getElementById("searchMessage");
+
+
+    flightForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const from =
+            document.getElementById("from").value;
+
+        const to =
+            document.getElementById("to").value;
+
+        const departure =
+            document.getElementById("departure").value;
+
+
+        if (from === "" ||
+            to === "" ||
+            departure === "") {
+
+            searchMessage.innerHTML =
+                "Please complete the required flight information.";
+
+            searchMessage.classList.add("show");
+
+            return;
+
+        }
+
+
+        searchMessage.innerHTML =
+            "✈ Searching flights from <strong>"
+            + from
+            + "</strong> to <strong>"
+            + to
+            + "</strong>...";
+
+
+        searchMessage.classList.add("show");
+
+
+        setTimeout(function() {
+
+            searchMessage.innerHTML =
+                "Flight search received! Our travel team can assist you with available flights and booking.";
+
+        }, 1500);
+
+    });
+
+
+</script>
+
+
+</body>
+
+</html>
