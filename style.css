@@ -1,226 +1,451 @@
-```css
-/* ==========================================
-   DESTINATIONS SECTION
-========================================== */
-
-.destinations-section {
-    padding: 100px 8%;
-
-    background: #f7f5ef;
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
 
 
 /* ==========================================
-   SECTION HEADING
+   RESET
 ========================================== */
 
-.section-heading {
-    text-align: center;
-
-    max-width: 700px;
-
-    margin: 0 auto 55px;
-}
-
-
-.section-heading > span {
-    display: block;
-
-    margin-bottom: 12px;
-
-    font-family: "Montserrat", Arial, sans-serif;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: 4px;
-
-    color: #b08a3c;
-
-    text-transform: uppercase;
-}
-
-
-.section-heading h2 {
+* {
     margin: 0;
-
-    font-family: "Playfair Display", Georgia, serif;
-
-    font-size: 44px;
-
-    line-height: 1.2;
-
-    font-weight: 600;
-
-    color: #1d2935;
-
-    text-align: center;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
-.section-heading p {
-    margin-top: 15px;
-
-    font-family: "Montserrat", Arial, sans-serif;
-
-    font-size: 15px;
-
-    color: #777;
-
-    text-align: center;
-
-    line-height: 1.7;
+html {
+    scroll-behavior: smooth;
 }
+
+
+body {
+    font-family: 'DM Sans', Arial, sans-serif;
+    color: #17283b;
+    background: white;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
 
 
 /* ==========================================
-   DESTINATION GRID
+   NAVIGATION
 ========================================== */
 
-.destination-grid {
-    width: 100%;
-
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 25px;
-}
-
-
-/* ==========================================
-   DESTINATION CARD
-========================================== */
-
-.destination-card {
-    background: #ffffff;
-
-    border-radius: 16px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.10);
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-}
-
-
-.destination-card:hover {
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 18px 40px rgba(0, 0, 0, 0.16);
-}
-
-
-/* ==========================================
-   RECTANGULAR PHOTO AREA
-========================================== */
-
-.destination-image {
-    position: relative;
-
-    width: 100%;
-
-    height: 260px;
-
-    overflow: hidden;
-
-    background: #ddd;
-}
-
-
-/* ==========================================
-   ACTUAL COUNTRY PHOTO
-========================================== */
-
-.destination-image img {
+.navbar {
     position: absolute;
 
     top: 0;
-
     left: 0;
 
     width: 100%;
 
-    height: 100%;
+    z-index: 50;
 
-    /*
-       THIS MAKES THE PHOTO FIT
-       THE RECTANGLE WITHOUT DISTORTION
-    */
-
-    object-fit: cover;
-
-    object-position: center;
-
-    display: block;
-
-    transition:
-        transform 0.6s ease;
+    padding: 25px 0;
 }
 
 
-/* ==========================================
-   PHOTO ZOOM WHEN HOVERING
-========================================== */
+.navbar-container {
+    width: 90%;
 
-.destination-card:hover
-.destination-image img {
+    max-width: 1200px;
 
-    transform: scale(1.08);
+    margin: auto;
 
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
 }
 
 
-/* ==========================================
-   DARK PHOTO OVERLAY
-========================================== */
 
-.image-overlay {
+/* LOGO */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: white;
+}
+
+
+.logo-plane {
+    color: #f8c85b;
+
+    font-size: 43px;
+
+    line-height: 1;
+
+    transform: rotate(-8deg);
+}
+
+
+.logo-name {
+    font-family:
+        'Playfair Display',
+        Georgia,
+        serif;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    font-weight: 600;
+}
+
+
+.logo-subtitle {
+    color: #f8c85b;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    margin-top: 5px;
+}
+
+
+
+/* NAV LINKS */
+
+.navigation {
+    display: flex;
+
+    align-items: center;
+
+    gap: 38px;
+}
+
+
+.nav-link {
+    position: relative;
+
+    color: rgba(255,255,255,0.92);
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    padding: 10px 0;
+
+    transition: 0.3s;
+}
+
+
+.nav-link:hover {
+    color: #f8c85b;
+}
+
+
+.nav-link.active {
+    color: #f8c85b;
+}
+
+
+.nav-link.active::after {
+    content: "";
+
     position: absolute;
 
-    inset: 0;
+    left: 0;
+    right: 0;
+
+    bottom: 0;
+
+    height: 2px;
+
+    background: #f8c85b;
+}
+
+
+
+/* BOOK FLIGHT */
+
+.book-flight-button {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background: #f8c85b;
+
+    color: #17283b;
+
+    padding: 15px 25px;
+
+    border-radius: 35px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.15);
+
+    transition: 0.3s;
+}
+
+
+.book-flight-button:hover {
+    background: white;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.2);
+}
+
+
+.calendar-icon {
+    font-size: 15px;
+}
+
+
+
+/* HERO SECTION */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background-image: url("travel-background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* DESTINATIONS SECTION */
+.destinations {
+    padding: 50px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.destination {
+    background: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.destination img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.destination h3 {
+    margin: 15px 0 5px;
+}
+
+.destination p {
+    padding: 0 15px 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+
+
+
+/* EYEBROW */
+
+.hero-eyebrow {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+
+.hero-eyebrow .line {
+    display: block;
+
+    width: 75px;
+
+    height: 1px;
+
+    background:
+        rgba(255,255,255,0.75);
+}
+
+
+
+/* MAIN TITLE */
+
+.hero-title {
+    font-family:
+        'Playfair Display',
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(52px, 7vw, 90px);
+
+    line-height: 0.98;
+
+    letter-spacing: -2px;
+
+    font-weight: 600;
+
+    text-shadow:
+        0 5px 30px rgba(0,0,0,0.2);
+
+    margin: 0;
+}
+
+
+.gold-title {
+    color: #f8d36d;
+}
+
+
+.white-title {
+    color: white;
+}
+
+
+
+/* DESCRIPTION */
+
+.hero-description {
+    color: white;
+
+    font-size: 19px;
+
+    font-weight: 400;
+
+    margin: 30px auto;
+
+    text-shadow:
+        0 2px 10px rgba(0,0,0,0.25);
+}
+
+
+
+/* EXPLORE BUTTON */
+
+.explore-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    min-width: 350px;
+
+    padding: 17px 30px;
+
+    border-radius: 40px;
 
     background:
         linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.05),
-            rgba(0, 0, 0, 0.30)
+            135deg,
+            #ffe29a,
+            #f5b52e
         );
 
-    z-index: 1;
+    color: #17324c;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.2);
+
+    transition: 0.3s;
 }
 
 
-/* ==========================================
-   COUNTRY FLAG
-========================================== */
+.explore-button:hover {
+    transform: translateY(-4px);
 
-.country-flag {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #ffe29a
+        );
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,0.25);
+}
+
+
+.button-arrow {
+    font-size: 22px;
+
+    line-height: 1;
+}
+
+
+
+/* SCROLL BUTTON */
+
+.scroll-indicator {
     position: absolute;
 
-    z-index: 2;
+    z-index: 5;
+
+    bottom: 25px;
 
     left: 50%;
 
-    bottom: 20px;
+    transform: translateX(-50%);
 
-    transform:
-        translateX(-50%);
+    width: 36px;
 
-    width: 58px;
+    height: 56px;
 
-    height: 58px;
+    border: 1.5px solid white;
+
+    border-radius: 25px;
+
+    color: white;
 
     display: flex;
 
@@ -228,124 +453,737 @@
 
     justify-content: center;
 
-    border-radius: 50%;
+    font-size: 20px;
 
-    background: rgba(255, 255, 255, 0.95);
-
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.18);
-
-    font-size: 30px;
-
-    line-height: 1;
+    transition: 0.3s;
 }
 
 
+.scroll-indicator:hover {
+    background: rgba(255,255,255,0.2);
+
+    transform:
+        translateX(-50%)
+        translateY(-3px);
+}
+
+
+
 /* ==========================================
-   DESTINATION INFORMATION
+   BOOKING
 ========================================== */
 
-.destination-info {
+.booking-section {
+    background: #f5f8fa;
 
-    padding: 35px 20px 25px;
+    padding: 80px 20px;
+}
+
+
+.booking-container {
+    max-width: 1150px;
+
+    margin: auto;
+}
+
+
+.booking-heading {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.booking-heading span {
+    color: #c99422;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.booking-heading h2 {
+    font-family:
+        'Playfair Display',
+        Georgia,
+        serif;
+
+    font-size: 40px;
+
+    margin: 7px 0;
+}
+
+
+.booking-heading p {
+    color: #788795;
+
+    font-size: 15px;
+}
+
+
+
+/* FORM */
+
+.flight-form {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        1.2fr
+        1fr
+        1fr
+        1fr
+        auto;
+
+    gap: 10px;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 45px rgba(24,50,70,0.12);
+}
+
+
+.form-field {
+    border: 1px solid #e0e6eb;
+
+    border-radius: 10px;
+
+    padding: 10px 13px;
+
+    background: white;
+}
+
+
+.form-field label {
+    display: block;
+
+    color: #87929c;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 5px;
+}
+
+
+.field-wrapper {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.field-wrapper > span {
+    color: #d29e25;
+
+    font-size: 13px;
+}
+
+
+.field-wrapper input,
+.field-wrapper select {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #24364a;
+
+    font-size: 13px;
+}
+
+
+.search-button {
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 0 22px;
+
+    background: #f4b934;
+
+    color: #17283b;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition: 0.3s;
+}
+
+
+.search-button span {
+    margin-left: 10px;
+
+    font-size: 18px;
+}
+
+
+.search-button:hover {
+    background: #ffd36b;
+
+    transform: translateY(-2px);
+}
+
+
+
+/* SEARCH MESSAGE */
+
+.search-message {
+    max-width: 700px;
+
+    margin: 20px auto 0;
+
+    padding: 15px;
 
     text-align: center;
 
-    background: #ffffff;
+    color: #315c78;
+
+    background: #eaf4f8;
+
+    border-radius: 10px;
+
+    display: none;
+
+    font-size: 14px;
+}
+
+
+.search-message.show {
+    display: block;
+}
+
+
+
+/* ==========================================
+   DESTINATIONS
+========================================== */
+
+.destinations-section {
+    padding: 110px 20px;
+
+    background: white;
+}
+
+
+.section-heading {
+    text-align: center;
+
+    max-width: 650px;
+
+    margin: 0 auto 50px;
+}
+
+
+.section-heading > span {
+    color: #c99422;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.section-heading h2 {
+    font-family:
+        'Playfair Display',
+        Georgia,
+        serif;
+
+    font-size: 44px;
+
+    margin: 8px 0;
+}
+
+
+.section-heading p {
+    color: #7b8995;
+
+    font-size: 15px;
+}
+
+
+.destination-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.destination-card {
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background: white;
+
+    box-shadow:
+        0 8px 30px rgba(20,40,60,0.1);
+
+    transition: 0.3s;
+}
+
+
+.destination-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(20,40,60,0.15);
+}
+
+
+.destination-image {
+    height: 250px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 70px;
+}
+
+
+.tokyo {
+    background:
+        linear-gradient(
+            135deg,
+            #efa9a9,
+            #f8dddd
+        );
+}
+
+
+.singapore {
+    background:
+        linear-gradient(
+            135deg,
+            #e5a86e,
+            #f5d5b5
+        );
+}
+
+
+.seoul {
+    background:
+        linear-gradient(
+            135deg,
+            #ad9bcf,
+            #e0d8ee
+        );
+}
+
+
+.paris {
+    background:
+        linear-gradient(
+            135deg,
+            #92afd0,
+            #d9e4f1
+        );
+}
+
+
+.destination-info {
+    padding: 18px 20px;
 }
 
 
 .destination-info h3 {
-
-    margin: 0;
-
     font-family:
-        "Playfair Display",
+        'Playfair Display',
+        Georgia,
+        serif;
+
+    font-size: 21px;
+}
+
+
+.destination-info p {
+    color: #85919c;
+
+    font-size: 13px;
+}
+
+
+
+/* ==========================================
+   ABOUT
+========================================== */
+
+.about-section {
+    padding: 100px 20px;
+
+    background: #f6f8fa;
+
+    text-align: center;
+}
+
+
+.feature-grid {
+    max-width: 950px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 40px;
+}
+
+
+.feature-icon {
+    width: 68px;
+
+    height: 68px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: white;
+
+    color: #d09b20;
+
+    font-size: 28px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.08);
+}
+
+
+.feature h3 {
+    font-family:
+        'Playfair Display',
+        Georgia,
+        serif;
+
+    font-size: 21px;
+
+    margin-bottom: 8px;
+}
+
+
+.feature p {
+    max-width: 270px;
+
+    margin: auto;
+
+    color: #7c8995;
+
+    font-size: 14px;
+}
+
+
+
+/* ==========================================
+   CONTACT
+========================================== */
+
+.contact-section {
+    padding: 110px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b3c63,
+            #17648c
+        );
+}
+
+
+.contact-content {
+    max-width: 700px;
+
+    margin: auto;
+}
+
+
+.contact-content > span {
+    color: #f8c85b;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.contact-content h2 {
+    font-family:
+        'Playfair Display',
+        Georgia,
+        serif;
+
+    font-size: 48px;
+
+    line-height: 1.2;
+
+    margin: 10px 0 15px;
+}
+
+
+.contact-content p {
+    color: rgba(255,255,255,0.78);
+
+    margin-bottom: 30px;
+}
+
+
+.contact-button {
+    display: inline-block;
+
+    padding: 15px 28px;
+
+    border-radius: 30px;
+
+    background: #f8c85b;
+
+    color: #17283b;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+.contact-button:hover {
+    background: white;
+
+    transform: translateY(-3px);
+}
+
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+    padding: 35px 20px;
+
+    background: #071e31;
+
+    text-align: center;
+
+    color: white;
+}
+
+
+.footer-logo {
+    font-family:
+        'Playfair Display',
         Georgia,
         serif;
 
     font-size: 25px;
 
-    line-height: 1.2;
+    color: #f8c85b;
 
-    font-weight: 600;
-
-    color: #1d2935;
-
+    margin-bottom: 5px;
 }
 
 
-.destination-info p {
+footer p {
+    color: #879baa;
 
-    margin: 8px 0 0;
+    font-size: 13px;
 
-    font-family:
-        "Montserrat",
-        Arial,
-        sans-serif;
-
-    font-size: 12px;
-
-    line-height: 1.5;
-
-    font-weight: 600;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-
-    color: #a07b35;
-
+    margin-bottom: 12px;
 }
+
+
+footer small {
+    color: #5f7788;
+
+    font-size: 11px;
+}
+
 
 
 /* ==========================================
-   RESPONSIVE
+   TABLET
 ========================================== */
 
 @media (max-width: 1050px) {
 
-    .destination-grid {
+    .navigation {
+        gap: 20px;
+    }
 
+
+    .flight-form {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .search-button {
+        min-height: 55px;
+    }
+
+
+    .destination-grid {
         grid-template-columns:
             repeat(2, 1fr);
 
+        max-width: 700px;
     }
 
 }
 
 
-@media (max-width: 600px) {
 
-    .destinations-section {
+/* ==========================================
+   MOBILE
+========================================== */
 
-        padding: 70px 6%;
+@media (max-width: 700px) {
 
+    .navbar {
+        padding-top: 18px;
+    }
+
+
+    .navbar-container {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .navigation {
+        display: none;
+    }
+
+
+    .book-flight-button {
+        display: none;
+    }
+
+
+    .hero {
+        min-height: 700px;
+
+        padding-top: 150px;
+    }
+
+
+    .hero-eyebrow {
+        gap: 8px;
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .hero-eyebrow .line {
+        width: 30px;
+    }
+
+
+    .hero-title {
+        font-size: 48px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .hero-description {
+        font-size: 15px;
+
+        margin: 25px auto;
+    }
+
+
+    .explore-button {
+        min-width: 260px;
+
+        padding: 15px 22px;
+    }
+
+
+    .booking-section {
+        padding-top: 60px;
+    }
+
+
+    .flight-form {
+        grid-template-columns: 1fr;
+
+        padding: 20px;
+    }
+
+
+    .search-button {
+        height: 55px;
+    }
+
+
+    .destination-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 350px;
+    }
+
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 350px;
     }
 
 
     .section-heading h2 {
-
         font-size: 36px;
-
     }
 
 
-    .destination-grid {
-
-        grid-template-columns:
-            1fr;
-
-        gap: 25px;
-
-    }
-
-
-    .destination-image {
-
-        height: 250px;
-
+    .contact-content h2 {
+        font-size: 38px;
     }
 
 }
-```
